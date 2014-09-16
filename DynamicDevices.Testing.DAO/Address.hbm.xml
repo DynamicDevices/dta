@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="DynamicDevices.Testing.DAO" assembly="DynamicDevices.Testing.DAO">
+
+  <class name="Address" table="tblAddress">
+
+    <!-- `idtblAddress` INT NOT NULL AUTO_INCREMENT ,-->
+    <id name="ID" column="idtblAddress" type="int" >
+      <generator class="native" />
+    </id>
+
+    <!--`Address1` VARCHAR(45) NOT NULL ,-->
+    <property name="Address1" column="Address1" type="string" length="45" not-null="true"/>
+    <!--`Address2` VARCHAR(45) NULL ,-->
+    <property name="Address2" column="Address2" type="string" length="45" />
+    <!--`City` VARCHAR(45) NOT NULL ,-->
+    <property name="City" column="City" type="string" length="45" not-null="true"/>
+    <!--`Area` VARCHAR(45) NULL ,-->
+    <property name="Area" column="Area" type="string" length="45" />
+    <!--`PostCode` VARCHAR(20) NULL ,-->
+    <property name="PostCode" column="PostCode" type="string" length="20" />
+    <!--`Country` VARCHAR(20) NOT NULL ,-->
+    <property name="Country" column="Country" type="string" length="20" not-null="true"/>
+    <!--`Phone` VARCHAR(20) NULL ,-->
+    <property name="Phone" column="Phone" type="string" length="20" />
+    <!--`Fax` VARCHAR(20) NULL , -->
+    <property name="Fax" column="Fax" type="string" length="20" />
+
+  </class>
+</hibernate-mapping>

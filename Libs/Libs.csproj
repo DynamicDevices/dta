@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37C98DAD-196F-44EC-AA0C-ABEF7A998E65}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Libs</RootNamespace>
+    <AssemblyName>Libs</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Content Include="bouncycastle.crypto\BouncyCastle.Crypto.dll" />
+    <Content Include="Castle\Castle.Core.dll" />
+    <Content Include="Castle\Castle.Core.xml" />
+    <Content Include="Castle\NHibernate.ByteCode.Castle.dll" />
+    <Content Include="Castle\NHibernate.ByteCode.Castle.xml" />
+    <Content Include="iesi.collections\Iesi.Collections.dll" />
+    <Content Include="iesi.collections\Iesi.Collections.pdb" />
+    <Content Include="iesi.collections\Iesi.Collections.xml" />
+    <Content Include="LinFu\LinFu.DynamicProxy.dll" />
+    <Content Include="LinFu\LinFu.License.txt" />
+    <Content Include="LinFu\NHibernate.ByteCode.LinFu.dll" />
+    <Content Include="LinFu\NHibernate.ByteCode.LinFu.pdb" />
+    <Content Include="LinFu\NHibernate.ByteCode.LinFu.xml" />
+    <Content Include="log4net\log4net.dll" />
+    <Content Include="MySQL.Data\MySql.Data.dll" />
+    <Content Include="nhibernate\NHibernate.dll" />
+    <Content Include="nhibernate\NHibernate.pdb" />
+    <Content Include="nhibernate\NHibernate.xml" />
+    <Content Include="SharpSSH\DiffieHellman.dll" />
+    <Content Include="SharpSSH\DiffieHellman.pdb" />
+    <Content Include="SharpSSH\Tamir.SharpSSH.dll" />
+    <Content Include="SharpSSH\Tamir.SharpSSH.pdb" />
+    <Content Include="SharpZipLib\SharpZipLib.dll" />
+    <Content Include="SharpZipLib\SharpZipLib.pdb" />
+    <Content Include="Spring\antlr.runtime.dll" />
+    <Content Include="Spring\Common.Logging.dll" />
+    <Content Include="Spring\NHibernate.ByteCode.Spring.dll" />
+    <Content Include="Spring\NHibernate.ByteCode.Spring.pdb" />
+    <Content Include="Spring\NHibernate.ByteCode.Spring.xml" />
+    <Content Include="Spring\Spring.Aop.dll" />
+    <Content Include="Spring\Spring.Aop.xml" />
+    <Content Include="Spring\Spring.Core.dll" />
+    <Content Include="Spring\Spring.Core.xml" />
+    <Content Include="SSH.Net\Renci.SshNet.dll" />
+    <Content Include="SSH.Net\Renci.SshNet.pdb" />
+    <Content Include="System.Net.FtpClient\System.Net.FtpClient.dll" />
+    <Content Include="System.Net.FtpClient\System.Net.FtpClient.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nhibernate\nhibernate-configuration.xsd" />
+    <None Include="nhibernate\nhibernate-mapping.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="castle.dynamicproxy\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="DynamicDevices.Testing.DAO" assembly="DynamicDevices.Testing.DAO">
+
+  <class name="DeviceClass" table="tblDeviceClass">
+
+    <!-- `idtblDeviceClass` INT NOT NULL AUTO_INCREMENT ,-->
+    <id name="ID" column="idtblDeviceClass" type="int" >
+      <generator class="native" />
+    </id>
+
+    <!-- `Name` VARCHAR(45) NOT NULL ,-->
+    <property name="Name" column="Name" type="string" length="45" not-null="true"/>
+
+    <!-- `DefaultHost` VARCHAR(30) NOT NULL ,-->
+    <property name="DefaultHost" column="DefaultHost" type="string" length="30" not-null="true"/>
+
+    <!-- `DefaultLogin` VARCHAR(30) NOT NULL ,-->
+    <property name="DefaultLogin" column="DefaultLogin" type="string" length="30" not-null="true"/>
+
+    <!-- `DefaultPassword` VARCHAR(30) NOT NULL ,-->
+    <property name="DefaultPassword" column="DefaultPassword" type="string" length="30" not-null="true"/>
+
+    <!-- `SoftwareURL` VARCHAR(255) NOT NULL ,-->
+    <property name="SoftwareURL" column="SoftwareURL" type="string" length="255" not-null="true"/>
+
+    <!-- `ResultsURL` VARCHAR(255) NOT NULL ,-->
+    <property name="ResultsURL" column="ResultsURL" type="string" length="255" not-null="true"/>
+
+    <!-- `ResourcesURL` VARCHAR(255) NOT NULL ,-->
+    <property name="ResourcesURL" column="ResourcesURL" type="string" length="255" not-null="true"/>
+
+    <!-- `ScriptURL` VARCHAR(255) NOT NULL ,-->
+    <property name="ScriptURL" column="ScriptURL" type="string" length="255" not-null="true"/>
+
+    <!--`LastProducerSerial` VARCHAR(45) NULL ,-->
+    <property name="LastProducerSerial" column="LastProducerSerial" type="string" length="45" />
+
+    <!--`LastCustomerSerial` VARCHAR(45) NULL ,-->
+    <property name="LastCustomerSerial" column="LastCustomerSerial" type="string" length="45" />
+    
+    <!--`MinProducerSerial` VARCHAR(45) NOT NULL ,-->
+    <property name="MinProducerSerial" column="MinProducerSerial" type="string" length="45" not-null="true"/>
+    
+    <!--`MaxProducerSerial` VARCHAR(45)  ,-->
+    <property name="MaxProducerSerial" column="MaxProducerSerial" type="string" length="45" />
+    
+    <!--`MinCustomerSerial` VARCHAR(45) NOT NULL ,-->
+    <property name="MinCustomerSerial" column="MinCustomerSerial" type="string" length="45" not-null="true"/>
+    
+    <!--`MaxCustomerSerial` VARCHAR(45) ,-->
+    <property name="MaxCustomerSerial" column="MaxCustomerSerial" type="string" length="45" />
+
+    <!-- `Description` VARCHAR(255) NULL , -->
+    <property name="Description" column="Description" type="string" length="255" />
+
+    <set name="TestLists" table="tblTestList" access="field.camelcase-underscore" inverse="true" cascade="all">
+      <key column="DeviceClassID"/>
+      <one-to-many class="TestList"/>
+    </set>
+
+    <!--`Enabled` BOOL NOT NULL-->
+    <property name="Enabled" column="Enabled" type="bool" not-null="true" />
+
+  </class>
+</hibernate-mapping>

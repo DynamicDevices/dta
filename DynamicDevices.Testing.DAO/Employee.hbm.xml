@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="DynamicDevices.Testing.DAO" assembly="DynamicDevices.Testing.DAO">
+
+  <class name="Employee" table="tblEmployee">
+
+    <!-- `idtblEmployee` INT NOT NULL AUTO_INCREMENT ,-->
+    <id name="ID" column="idtblEmployee" type="int" >
+      <generator class="native" />
+    </id>
+
+    <!--`Forename` VARCHAR(45) NOT NULL ,-->
+    <property name="Forename" column="Forename" type="string" length="45" not-null="true"/>
+    <!--`Surname` VARCHAR(45) NULL ,-->
+    <property name="Surname" column="Surname" type="string" length="45" not-null="true"/>
+    <!--`Login` VARCHAR(20) NOT NULL ,-->
+    <property name="Login" column="Login" type="string" length="20" not-null="true"/>
+    <!--`Password` VARCHAR(20) NOT NULL ,-->
+    <property name="Password" column="Password" type="string" length="20" not-null="true"/>
+    <!--`RoleNumber` VARCHAR(20) NULL ,-->
+    <property name="RoleNumber" column="RoleNumber" type="string" length="20" />
+    <!--`Phone` VARCHAR(20) NULL ,-->
+    <property name="Phone" column="Phone" type="string" length="20" />
+    <!--`Email` VARCHAR(30) NULL ,-->
+    <property name="Email" column="Email" type="string" length="30" />
+    <!--`ManagerID` INT NULL ,-->
+    <many-to-one name="Manager" class="Employee" column="ManagerID" cascade="all"/>
+    <!--`CompanyID` INT NOT NULL ,-->
+    <many-to-one name="Company" class="Company" column="CompanyID" cascade="all"/>
+    <!--`Enabled` BOOL NOT NULL-->
+    <property name="Enabled" column="Enabled" type="bool" not-null="true" />
+
+    <set name="DevicesCreated" table="tblDevices" access="field.camelcase-underscore" inverse="true" cascade="all">
+      <key column="CreatorID"/>
+      <one-to-many class="Device"/>
+    </set>
+
+    <set name="DevicesTested" table="tblDevices" access="field.camelcase-underscore" inverse="true" cascade="all">
+      <key column="LastTestPersonID"/>
+      <one-to-many class="Device"/>
+    </set>
+
+  </class>
+</hibernate-mapping>

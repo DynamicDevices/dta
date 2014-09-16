@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="DynamicDevices.Testing.DAO" assembly="DynamicDevices.Testing.DAO">
+
+  <class name="TestListResult" table="tblTestListResult" >
+
+    <!--`idtblTestListResult` INT NOT NULL AUTO_INCREMENT ,-->
+    <id name="ID" column="idtblTestListResult" type="int" >
+      <generator class="native" />
+    </id>
+
+    <!--`EmployeeID` INT NOT NULL ,-->
+    <many-to-one name="Employee" class="Employee" column="EmployeeID" cascade="save-update"/>
+
+    <!--`TestLocationID` INT NOT NULL ,-->
+    <many-to-one name="TestLocation" class="TestLocation" column="TestLocationID" cascade="save-update"/>
+    
+    <!--`TestListID` INT NOT NULL ,-->
+    <many-to-one name="TestList" class="TestList" column="TestListID" cascade="save-update" />
+    
+    <!--`DeviceID` INT NOT NULL ,-->
+    <many-to-one name="Device" class="Device" column="DeviceID" cascade="save-update"/>
+    
+    <!--`Result` INT NOT NULL ,-->
+    <property name="Result" column="Result" type="bool" not-null="true"/>
+    
+    <!--`ResultURL` VARCHAR(255) NULL ,-->
+    <property name="ResultURL" column="ResultURL" type="string" length="255" />
+    
+    <!--`Notes` VARCHAR(255) NULL ,-->
+    <property name="Notes" column="Notes" type="string" length="255" />
+    
+    <!--`CreationDate` DATETIME NULL-->
+    <property name="CreationDate" column="CreationDate" type="datetime" not-null="true" />
+
+    <set name="TestItemResults" table="tblTestItemResult" access="field.camelcase-underscore" inverse="true" cascade="save-update">
+      <key column="TestListResultID"/>
+      <one-to-many class="TestItemResult"/>
+    </set>
+
+  </class>
+</hibernate-mapping>

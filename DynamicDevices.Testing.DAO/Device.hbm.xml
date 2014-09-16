@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" namespace="DynamicDevices.Testing.DAO" assembly="DynamicDevices.Testing.DAO">
+
+  <class name="Device" table="tblDevice">
+
+ 
+    <!--`idtblDevice` INT NOT NULL AUTO_INCREMENT ,-->
+    <id name="ID" column="idtblDevice" type="int" >
+      <generator class="native" />
+    </id>
+    
+    <!--`ProducerSerialNumber` VARCHAR(45) NOT NULL ,-->
+    <property name="ProducerSerialNumber" column="ProducerSerialNumber" type="string" length="45" not-null="true"/>
+
+    <!--`CustomerSerialNumber` VARCHAR(45) NULL ,-->
+    <property name="CustomerSerialNumber" column="CustomerSerialNumber" type="string" length="45" />
+    
+    <!--`DeviceClassID` INT NULL ,-->
+    <many-to-one name="DeviceClass" class="DeviceClass" column="DeviceClassID" cascade="save-update"/>
+    
+    <!--`CreationDate` DATETIME NULL-->
+    <property name="CreationDate" column="CreationDate" type="datetime" not-null="true" />
+    
+    <!--`CreatorID` INT NOT NULL ,-->
+    <many-to-one name="Creator" class="Employee" column="CreatorID" cascade="save-update"/>
+
+    <many-to-one name="LastTester" class="Employee" column="LastTestPersonID" cascade="save-update"/>
+    
+    <property name="LastTestDate" column="LastTestDate" type="datetime" not-null="true" />
+
+    <set name="TestListResults" table="tblTestListResult" access="field.camelcase-underscore" inverse="true" >
+      <key column="DeviceID"/>
+      <one-to-many class="TestListResult"/>
+    </set>
+
+  </class>
+</hibernate-mapping>
