@@ -35,8 +35,9 @@ namespace DeviceTestApplication
                     string remoteFile = file.PathAndQuery;
 
                     // Check for existence
-                    if (!cl.FileExists(remoteFile))
-                        return false;
+#warning DOESN'T SEEM TO WORK ON ALL SERVERS
+//                    if (!cl.FileExists(remoteFile))
+//                        return false;
 
                     long size = cl.GetFileSize(remoteFile);
 
