@@ -546,7 +546,16 @@ namespace DeviceTestApplication
 
             if(!connected)
             {
-                if (Client != null) Client.Dispose();
+                if (Client != null)
+                {
+                    try
+                    {
+                        Client.Dispose();
+                    } catch
+                    {
+                    }
+                }
+
                 Client = null;
 
                 pictureBoxPing.Image = imageList1.Images["cross"];
