@@ -507,15 +507,27 @@ namespace DeviceTestApplication
             bool connected = false;
             try
             {
-                if(Client != null)
-                    if(!Client.IsConnected)
+                if (Client != null)
+                {
+                    try
                     {
-                        try
+                        if (!Client.IsConnected)
                         {
-                            Client.Dispose();
-                            Client = null;
-                        } catch{}
+                            try
+                            {
+                                Client.Dispose();
+                                Client = null;
+                            }
+                            catch
+                            {
+                            }
+                        }
                     }
+                    catch (ObjectDisposedException)
+                    {
+                        Client = null;
+                    }
+                }
 
                 if (Client == null)
                 {
@@ -1313,19 +1325,27 @@ namespace DeviceTestApplication
 
             // Setup SSH connection for tests
             if (Client != null)
-                if (!Client.IsConnected)
+            {
+                try
                 {
-                    try
+                    if (!Client.IsConnected)
                     {
-                        Client.Dispose();
+                        try
+                        {
+                            Client.Dispose();
+                        }
+                        catch
+                        {
+                        }
+                        Client = null;
                     }
-                    catch
-                    {
-                    }
+                } catch(ObjectDisposedException)
+                {
                     Client = null;
                 }
+            }
 
-            if (Client == null || !Client.IsConnected)
+            if (Client == null)
             {
                 Client = new SshClient(textBoxIPAddress.Text, textBoxSSHLogin.Text, textBoxSSHPassword.Text);
                 Client.Connect();

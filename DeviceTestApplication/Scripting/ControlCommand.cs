@@ -86,6 +86,10 @@ namespace DeviceTestApplication.Scripting
 
                 var command1 = client.RunCommand(Send);
 
+                // If we have no success response defined but we do have an error response then assume success to begin
+                if (!string.IsNullOrEmpty(ErrorResponse) && string.IsNullOrEmpty(SuccessResponse))
+                    success = true;
+
                 if (string.IsNullOrEmpty(ErrorResponse) && string.IsNullOrEmpty(SuccessResponse))
                 {
                     // Just check exit status
