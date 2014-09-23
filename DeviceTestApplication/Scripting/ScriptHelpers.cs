@@ -34,11 +34,12 @@ namespace DeviceTestApplication.Scripting
             sb = sb.Replace("$yyyy-MM-dd",
                             DateTime.Now.ToString("yyyy-MM-dd"));
 
+            sb = sb.Replace("$HH:mm:ss",
+                            DateTime.Now.ToString("HH:mm:ss"));
+
             sb = sb.Replace("$HH:mm",
                             DateTime.Now.ToString("HH:mm"));
 
-            sb = sb.Replace("$HH:mm:ss",
-                            DateTime.Now.ToString("HH:mm:ss"));
 
             // Generate custom serial)
 
