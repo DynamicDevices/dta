@@ -62,10 +62,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Libs\LinFu\NHibernate.ByteCode.LinFu.dll</HintPath>
     </Reference>
-    <Reference Include="Renci.SshNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\SSH.Net\Renci.SshNet.dll</HintPath>
-    </Reference>
     <Reference Include="SharpZipLib">
       <HintPath>..\Libs\SharpZipLib\SharpZipLib.dll</HintPath>
     </Reference>
@@ -233,6 +229,10 @@
     <ProjectReference Include="..\DynamicDevices.Testing.DAO\DynamicDevices.Testing.DAO.csproj">
       <Project>{E5DCC2DC-6A52-4121-BF5F-BCDF11DF2976}</Project>
       <Name>DynamicDevices.Testing.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Renci.SshNet\Renci.SshNet.csproj">
+      <Project>{2F5F8C90-0BD1-424F-997C-7BC6280919D1}</Project>
+      <Name>Renci.SshNet</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
