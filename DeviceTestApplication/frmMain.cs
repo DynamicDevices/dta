@@ -855,15 +855,21 @@ namespace DeviceTestApplication
             textBoxLog.Clear();
 
             // Need to make this thread-safe and implement in background
-            DoWork(true, -1);
+            try
+            {
+                DoWork(true, -1);
 
-            textBoxEndUserSerial.Enabled = true;
-            textBoxEndUserSerial.Text = "";
-            textBoxProducerSerial.Text = "";
-            buttonCheckSerial.Enabled = true;
-            buttonExit.Enabled = true;
+                textBoxEndUserSerial.Enabled = true;
+                textBoxEndUserSerial.Text = "";
+                textBoxProducerSerial.Text = "";
+                buttonCheckSerial.Enabled = true;
+                buttonExit.Enabled = true;
 
-            buttonTestForDevice.Select();
+                buttonTestForDevice.Select();
+            } catch
+            {
+                toolStripStatusLabel1.Text = "Couldn't connect to SSH server";
+            }
         }
 
         /// <summary>

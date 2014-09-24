@@ -113,19 +113,28 @@ namespace DeviceTestApplication.Scripting
 
                 if (!string.IsNullOrEmpty(ErrorResponse))
                 {
-                    if (response.Contains(ErrorResponse))
+                    var arrErrorResponses = ErrorResponse.Split('|');
+                    foreach (var er in arrErrorResponses)
                     {
-                        Logger.Warn("- Error response: " + response);
-                        return false;
+                        if (response.Contains(ErrorResponse))
+                        {
+                            Logger.Warn("- Error response: " + response);
+                            return false;
+                        }
                     }
                 }
 
                 if (!string.IsNullOrEmpty(SuccessResponse))
                 {
-                    if (response.Contains(SuccessResponse))
+                    var arrSuccessResponses = SuccessResponse.Split('|');
+                    foreach (var sr in arrSuccessResponses)
                     {
-                        Logger.Warn("- Success response: " + response);
-                        success = true;
+                        if (response.Contains(sr))
+                        {
+                            Logger.Warn("- Success response: " + response);
+                            success = true;
+                            break;
+                        }
                     }
                 }
 
