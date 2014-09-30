@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Threading;
 using Renci.SshNet.Channels;
 using System.IO;
 using Renci.SshNet.Common;
@@ -41,11 +43,21 @@ namespace Renci.SshNet
 
                 //  Send channel command request
                 channel.SendExecRequest(string.Format("scp -t \"{0}\"", path));
+
                 this.CheckReturnCode(input);
+
+                Debug.WriteLine("6");
 
                 this.InternalUpload(channel, input, fileInfo, fileInfo.Name);
 
+                Debug.WriteLine("7");
+
+                Thread.Sleep(500);
+
                 channel.Close();
+
+                Debug.WriteLine("8");
+
             }
         }
 
@@ -176,7 +188,11 @@ namespace Renci.SshNet
             var files = directoryInfo.GetFiles();
             foreach (var file in files)
             {
+                Debug.WriteLine("U1");
+
                 this.InternalUpload(channel, input, file, file.Name);
+
+                Debug.WriteLine("U1 DONE");
             }
 
             //  Upload directories

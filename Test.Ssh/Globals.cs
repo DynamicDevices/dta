@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Net;
-using DynamicDevices.Testing.DAO;
 
 namespace DeviceTestApplication
 {
@@ -32,8 +31,7 @@ namespace DeviceTestApplication
         {
             get
             {
-                var scrURI = new Uri(DeviceClass.ScriptURL);
-                return CacheFolder + Path.DirectorySeparatorChar + scrURI.Segments[scrURI.Segments.Length - 1];
+                return CacheFolder + Path.DirectorySeparatorChar + "tix6testscript-1.0.xml";
             }
         }
 
@@ -44,8 +42,7 @@ namespace DeviceTestApplication
         {
             get
             {
-                var swURI = new Uri(DeviceClass.SoftwareURL);
-                return CacheFolder + Path.DirectorySeparatorChar + swURI.Segments[swURI.Segments.Length - 1];
+                return CacheFolder + Path.DirectorySeparatorChar + "tix6testarchive-1.0.tgz";
             }
         }
 
@@ -56,20 +53,9 @@ namespace DeviceTestApplication
         {
             get
             {
-                var resURI = new Uri(DeviceClass.ResourcesURL);
-                return CacheFolder + Path.DirectorySeparatorChar + resURI.Segments[resURI.Segments.Length - 1];
+                return CacheFolder + Path.DirectorySeparatorChar + "tix6testresources-1.0.tgz";
             }
         }
-
-        /// <summary>
-        /// Currently logged in test user
-        /// </summary>
-        public static Employee LoggedInUser { get; set; }
-
-        /// <summary>
-        /// Class of device we're currently testing
-        /// </summary>
-        public static DeviceClass DeviceClass { get; set; }
 
         /// <summary>
         /// Address of device we're currently testing
@@ -82,21 +68,6 @@ namespace DeviceTestApplication
         public static bool DevicePingable { get; set; }
 
         /// <summary>
-        /// TestList to run
-        /// </summary>
-        public static TestList TestList { get; set; }
-
-        /// <summary>
-        /// Device object newly created for device under test
-        /// </summary>
-        public static Device Device { get; set; }
-
-        /// <summary>
-        /// Test location
-        /// </summary>
-        public static TestLocation TestLocation { get; set; }
-
-        /// <summary>
         /// Current producer SN
         /// </summary>
         public static string ProducerSerialNumber { get; set; }
@@ -105,26 +76,6 @@ namespace DeviceTestApplication
         /// Current customer SN
         /// </summary>
         public static string CustomerSerialNumber { get; set; }
-
-        public static string LocalResultFile
-        {
-            get
-            {
-                return ResultFolder + Path.DirectorySeparatorChar
-                    + Device.DeviceClass.Name
-                    + "_"
-                    + Device.ProducerSerialNumber
-                    + ".xml";
-            }
-        }
-
-        public static string RemoteResultFile
-        {
-            get
-            {
-                return Device.DeviceClass.Name + "_" + Device.ProducerSerialNumber + ".xml";
-            }
-        }
 
         public static bool CacheIsEnabled
         {

@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using DeviceTestApplication.Scripting;
 using DeviceTestApplication.Utilities;
@@ -959,7 +960,9 @@ namespace DeviceTestApplication
         /// <param name="script"></param>
         /// <param name="client"></param>
         protected void RunTests(Script script, SshClient client)
-       {
+        {
+            var originalCursor = Cursor.Current;
+            Cursor.Current = Cursors.WaitCursor;
 
             //
             // - Create the test list results
@@ -1105,6 +1108,9 @@ namespace DeviceTestApplication
             Refresh();
             Application.DoEvents();
 
+            DoLog("Updating database with results");
+            Application.DoEvents();
+            
             // Update the d/b with status
             testListResult.Result = success;
             Session.Update(testListResult);
@@ -1122,11 +1128,19 @@ namespace DeviceTestApplication
             Refresh();
             Application.DoEvents();
 
+            DoLog("Creating local results file");
+            Application.DoEvents();
+            
             // Update the test results file locally
+
             PersistResultsXML(Globals.Device);
 
             Refresh();
+
+            DoLog("*** Complete ***");
             Application.DoEvents();
+
+            Cursor.Current = originalCursor;
         }
 
         void testScript_OnUpdateUI(object sender, string info)
@@ -1140,7 +1154,9 @@ namespace DeviceTestApplication
                 return;
 
             // Got a new customer serial number...
+            buttonCheckSerial.Enabled = false;
             ButtonGetSerialNumbersClick();
+            buttonCheckSerial.Enabled = true;
         }
 
         private void ButtonCheckSerialClick(object sender, EventArgs e)
@@ -1149,7 +1165,9 @@ namespace DeviceTestApplication
                 return;
 
             // Got a new customer serial number...
-            ButtonGetSerialNumbersClick();            
+            buttonCheckSerial.Enabled = false;
+            ButtonGetSerialNumbersClick();
+            buttonCheckSerial.Enabled = true;
         }
 
         /// <summary>
@@ -1187,7 +1205,9 @@ namespace DeviceTestApplication
 
             strDoc.Append("  <testlistresults>\r\n");
 
-            foreach (var tl in device.TestListResults)
+            var tl = device.TestListResults[device.TestListResults.Count - 1];
+
+            //foreach (var tl in device.TestListResults)
             {
                 strDoc.Append("    <testlistresult>\r\n");
                 strDoc.Append("      <creationdate>" + XmlTextEncoder.Encode(tl.CreationDate.ToString()) + "</creationdate>\r\n");
@@ -1365,6 +1385,10 @@ namespace DeviceTestApplication
                 Client = new SshClient(textBoxIPAddress.Text, textBoxSSHLogin.Text, textBoxSSHPassword.Text);
                 Client.Connect();
             }
+
+            // AJL - We seem to have a problem with the initialisation scripts. Add a short delay to see if
+            //       we need to wait after connecting
+            Thread.Sleep(1000);
 
             bool stat;
             string output;

@@ -6,13 +6,13 @@ using Renci.SshNet;
 
 namespace DeviceTestApplication.Scripting
 {
-    public class ControlCommand : Command
+    public class ReadSerialCommand : Command
     {
         #region Fields
 
         #endregion
 
-        public ControlCommand(XmlNode n)
+        public ReadSerialCommand(XmlNode n)
             : base(n)
         {
             if (n.Attributes != null)
@@ -45,10 +45,6 @@ namespace DeviceTestApplication.Scripting
                         case "prompt":
                             Prompt = xa.Value;
                             break;
-                        case "setVariable":
-                            VariableForOutput = ScriptHelpers.ReplaceVars(xa.Value);
-                            break;
-                        // Wait for up to x secs
                     }
                 }
         }
@@ -90,10 +86,6 @@ namespace DeviceTestApplication.Scripting
 
                 var command1 = client.RunCommand(Send);
 
-                // If we have no success response defined but we do have an error response then assume success to begin
-                if (!string.IsNullOrEmpty(ErrorResponse) && string.IsNullOrEmpty(SuccessResponse))
-                    success = true;
-
                 if (string.IsNullOrEmpty(ErrorResponse) && string.IsNullOrEmpty(SuccessResponse))
                 {
                     // Just check exit status
@@ -117,28 +109,19 @@ namespace DeviceTestApplication.Scripting
 
                 if (!string.IsNullOrEmpty(ErrorResponse))
                 {
-                    var arrErrorResponses = ErrorResponse.Split('|');
-                    foreach (var er in arrErrorResponses)
+                    if (response.Contains(ErrorResponse))
                     {
-                        if (response.Contains(ErrorResponse))
-                        {
-                            Logger.Warn("- Error response: " + response);
-                            return false;
-                        }
+                        Logger.Warn("- Error response: " + response);
+                        return false;
                     }
                 }
 
                 if (!string.IsNullOrEmpty(SuccessResponse))
                 {
-                    var arrSuccessResponses = SuccessResponse.Split('|');
-                    foreach (var sr in arrSuccessResponses)
+                    if (response.Contains(SuccessResponse))
                     {
-                        if (response.Contains(sr))
-                        {
-                            Logger.Warn("- Success response: " + response);
-                            success = true;
-                            break;
-                        }
+                        Logger.Warn("- Success response: " + response);
+                        success = true;
                     }
                 }
 
@@ -146,14 +129,6 @@ namespace DeviceTestApplication.Scripting
                 Output = !string.IsNullOrEmpty(OutputRegExp) ? Regex.Match(response, OutputRegExp).Value : response;
 
                 Logger.Debug("Output: " + (!string.IsNullOrEmpty(Output) ? Output : "<none>"));
-
-                // Store output 
-                if (!string.IsNullOrEmpty(VariableForOutput))
-                {
-                    Globals.ScriptVariables.Remove(VariableForOutput);
-                    Globals.ScriptVariables.Add(VariableForOutput, Output);
-                }
-
             }
             catch (Exception e)
             {

@@ -168,6 +168,7 @@
       <DependentUpon>QuestionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RemoteFileManager.cs" />
+    <Compile Include="Scripting\ReportCommand.cs" />
     <Compile Include="Scripting\ReadSerialCommand.cs" />
     <Compile Include="Scripting\EnumGPSFix.cs" />
     <Compile Include="Scripting\Command.cs">
