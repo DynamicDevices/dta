@@ -87,6 +87,7 @@
             this.labelProviderSerial = new System.Windows.Forms.Label();
             this.buttonCheckSerial = new System.Windows.Forms.Button();
             this.checkBoxLocalTest = new System.Windows.Forms.CheckBox();
+            this.clearCacheFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTestLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeviceClasses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPing)).BeginInit();
@@ -551,7 +552,8 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.useDevDatabaseToolStripMenuItem});
+            this.useDevDatabaseToolStripMenuItem,
+            this.clearCacheFolderToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -560,7 +562,7 @@
             // 
             this.useDevDatabaseToolStripMenuItem.CheckOnClick = true;
             this.useDevDatabaseToolStripMenuItem.Name = "useDevDatabaseToolStripMenuItem";
-            this.useDevDatabaseToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.useDevDatabaseToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.useDevDatabaseToolStripMenuItem.Text = "Use Dev Database";
             this.useDevDatabaseToolStripMenuItem.Click += new System.EventHandler(this.UseDevDatabaseToolStripMenuItemClick);
             // 
@@ -577,7 +579,7 @@
             this.labelProviderSerial.AutoSize = true;
             this.labelProviderSerial.Location = new System.Drawing.Point(9, 514);
             this.labelProviderSerial.Name = "labelProviderSerial";
-            this.labelProviderSerial.Size = new System.Drawing.Size(71, 13);
+            this.labelProviderSerial.Size = new System.Drawing.Size(75, 13);
             this.labelProviderSerial.TabIndex = 44;
             this.labelProviderSerial.Text = "Provider Serial";
             // 
@@ -586,7 +588,7 @@
             this.buttonCheckSerial.Location = new System.Drawing.Point(253, 482);
             this.buttonCheckSerial.Name = "buttonCheckSerial";
             this.buttonCheckSerial.Size = new System.Drawing.Size(48, 23);
-            this.buttonCheckSerial.TabIndex = 46;
+            this.buttonCheckSerial.TabIndex = 25;
             this.buttonCheckSerial.Text = "Check";
             this.buttonCheckSerial.UseVisualStyleBackColor = true;
             this.buttonCheckSerial.Click += new System.EventHandler(this.ButtonCheckSerialClick);
@@ -602,6 +604,13 @@
             this.checkBoxLocalTest.Text = "Local Test Mode";
             this.checkBoxLocalTest.UseVisualStyleBackColor = true;
             this.checkBoxLocalTest.CheckedChanged += new System.EventHandler(this.CheckBoxLocalTestCheckedChanged);
+            // 
+            // clearCacheFolderToolStripMenuItem
+            // 
+            this.clearCacheFolderToolStripMenuItem.Name = "clearCacheFolderToolStripMenuItem";
+            this.clearCacheFolderToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.clearCacheFolderToolStripMenuItem.Text = "Clear cache folder";
+            this.clearCacheFolderToolStripMenuItem.Click += new System.EventHandler(this.clearCacheFolderToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -735,6 +744,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn testListDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewButtonColumn Execute;
+        private System.Windows.Forms.ToolStripMenuItem clearCacheFolderToolStripMenuItem;
     }
 }
 

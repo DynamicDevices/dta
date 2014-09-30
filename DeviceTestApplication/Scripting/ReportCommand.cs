@@ -11,6 +11,8 @@ namespace DeviceTestApplication.Scripting
     {
         public ReportCommand(XmlNode n) : base(n)
         {
+            Command = "notepad.exe";
+
             if (n.Attributes != null)
                 foreach (XmlAttribute xa in n.Attributes)
                 {
@@ -18,6 +20,9 @@ namespace DeviceTestApplication.Scripting
                     {
                         case "sourceFile":
                             SourceFile = xa.Value;
+                            break;
+                        case "command":
+                            Command = xa.Value;
                             break;
                         default:
 //                        _logger.Warn("Unknown control attribute: " + xa.Name);
@@ -52,8 +57,9 @@ namespace DeviceTestApplication.Scripting
                 
                 File.WriteAllText(displayPath, displayText);
 
-                Process.Start("notepad", displayPath);
+                Process.Start(Command, displayPath);
 
+                success = true;
             }
             catch (Exception e)
             {
@@ -61,6 +67,8 @@ namespace DeviceTestApplication.Scripting
             }
             return success;
         }
+
+        public string Command { get; set; }
 
         public string SourceFile { get; set; }
     }

@@ -11,7 +11,8 @@ namespace DeviceTestApplication.Scripting
             var sb = new StringBuilder(s);
 
             var scrURI = new Uri(Globals.DeviceClass.SoftwareURL);
-            var strFileName = Globals.CacheFolder + Path.DirectorySeparatorChar + scrURI.Segments[scrURI.Segments.Length - 1];
+            var strFileName = Globals.CacheFolder + Path.DirectorySeparatorChar +
+                              scrURI.Segments[scrURI.Segments.Length - 1];
 
             sb = sb.Replace("$BREAK",
                             "\f");
@@ -25,7 +26,7 @@ namespace DeviceTestApplication.Scripting
                             Globals.RemoteResultFile);
 
             sb = sb.Replace("$PRODUCERSERIALNUMBER",
-                Globals.ProducerSerialNumber);
+                            Globals.ProducerSerialNumber);
 
             sb = sb.Replace("$CUSTOMERSERIALNUMBER",
                             Globals.CustomerSerialNumber);
@@ -43,7 +44,7 @@ namespace DeviceTestApplication.Scripting
 
             // Generate custom serial)
 
-            if(string.IsNullOrEmpty(Globals.ProducerSerialNumber))
+            if (string.IsNullOrEmpty(Globals.ProducerSerialNumber))
                 Globals.ProducerSerialNumber = "";
 
             if (s.Contains("$IMXFORMATCUSTOMERSERIALNUMBER"))
@@ -68,12 +69,17 @@ namespace DeviceTestApplication.Scripting
                 string vsn2 = "";
                 for (int i = 0; i < 32; i++)
                 {
-                    if ((i > 0) && (i % 8) == 0)
+                    if ((i > 0) && (i%8) == 0)
                         vsn2 += ",";
 
                     vsn2 += vsn[i];
                 }
                 sb = sb.Replace("$IMXFORMATPRODUCERSERIALNUMBER", vsn2);
+            }
+
+            foreach (var kv in Globals.ScriptVariables)
+            {
+                sb = sb.Replace("$" + kv.Key, kv.Value);
             }
 
             return sb.ToString();

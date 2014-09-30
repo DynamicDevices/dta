@@ -39,14 +39,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_59E3D740B30771479331D231F960C54E"
+        "MsmKey" = "8:_6B18C7E57CCF1F6BD16C48474A56E586"
         "OwnerKey" = "8:_BA052F733B99406D9D1690B007E6D52A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_6C02DDCC6D4D543045A79F3C297AE050"
-        "OwnerKey" = "8:_DBE33B06FA1A2B8B9D223436ADF60FE2"
+        "OwnerKey" = "8:_BCFF2ACD27C33015ADA1864C2C89C0DB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -99,14 +99,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CFD1028CBB1B4295955422F19D82FD4C"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_BCFF2ACD27C33015ADA1864C2C89C0DB"
+        "OwnerKey" = "8:_BA052F733B99406D9D1690B007E6D52A"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DBE33B06FA1A2B8B9D223436ADF60FE2"
-        "OwnerKey" = "8:_BA052F733B99406D9D1690B007E6D52A"
+        "MsmKey" = "8:_CFD1028CBB1B4295955422F19D82FD4C"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -124,7 +124,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_59E3D740B30771479331D231F960C54E"
+        "OwnerKey" = "8:_6B18C7E57CCF1F6BD16C48474A56E586"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BCFF2ACD27C33015ADA1864C2C89C0DB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -167,12 +173,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A8008F58BCED4C023F1E9FB8635B6563"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DBE33B06FA1A2B8B9D223436ADF60FE2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -368,14 +368,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_59E3D740B30771479331D231F960C54E"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6B18C7E57CCF1F6BD16C48474A56E586"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Renci.SshNet, Version=2014.4.6.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_59E3D740B30771479331D231F960C54E"
+                    "_6B18C7E57CCF1F6BD16C48474A56E586"
                     {
                     "Name" = "8:Renci.SshNet.dll"
                     "Attributes" = "3:512"
@@ -554,34 +554,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CFD1028CBB1B4295955422F19D82FD4C"
-            {
-            "SourcePath" = "8:..\\README.md"
-            "TargetName" = "8:README.md"
-            "Tag" = "8:"
-            "Folder" = "8:_33928BD7E6C94634802EB6C7FF86AE25"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DBE33B06FA1A2B8B9D223436ADF60FE2"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BCFF2ACD27C33015ADA1864C2C89C0DB"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:DynamicDevices.Testing.DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DBE33B06FA1A2B8B9D223436ADF60FE2"
+                    "_BCFF2ACD27C33015ADA1864C2C89C0DB"
                     {
                     "Name" = "8:DynamicDevices.Testing.DAO.dll"
                     "Attributes" = "3:512"
@@ -603,6 +583,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CFD1028CBB1B4295955422F19D82FD4C"
+            {
+            "SourcePath" = "8:..\\README.md"
+            "TargetName" = "8:README.md"
+            "Tag" = "8:"
+            "Folder" = "8:_33928BD7E6C94634802EB6C7FF86AE25"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FB353442261A4A92767A67D6238B56D8"
@@ -703,15 +703,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Device Test Application"
-        "ProductCode" = "8:{0A294F2D-AEF6-4756-89D9-B33D51499AA5}"
-        "PackageCode" = "8:{883D0094-9788-4B0F-A30D-3509E506DEEB}"
+        "ProductCode" = "8:{E6B59CBC-4560-411E-A010-1EE2434AEFC5}"
+        "PackageCode" = "8:{BA414421-E847-4AD1-8BCF-DEFC47937D64}"
         "UpgradeCode" = "8:{187DE9EF-E8EB-46A2-983B-9044681C96C5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:2.1.0"
+        "ProductVersion" = "8:2.2.1"
         "Manufacturer" = "8:Dynamic Devices Ltd"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

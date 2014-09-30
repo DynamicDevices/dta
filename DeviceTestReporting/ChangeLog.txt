@@ -1,0 +1,12 @@
+﻿
+Version		Date		Author		Details
+=======		====		======		=======
+
+TODO: 
+
+- need to check for serial number uniqueness (serial numbers in general in fact)
+- need to make UI threaded
+
+0.1			07/01/2012	AJL			Initial cut
+0.2			07/01/2012	AJL			Adding in menu for refresh and exit
+0.3			09/01/2012	AJL			Added dev database support

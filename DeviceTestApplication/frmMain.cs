@@ -863,7 +863,12 @@ namespace DeviceTestApplication
                 textBoxEndUserSerial.Enabled = true;
                 textBoxEndUserSerial.Text = "";
                 textBoxProducerSerial.Text = "";
-                buttonCheckSerial.Enabled = true;
+
+                // AJL - Don't reeenable this as we want them to go to check connection
+                //       Otherwise the archive and script won't get copied, which is
+                //       confusing for the user
+                //buttonCheckSerial.Enabled = true;
+                
                 buttonExit.Enabled = true;
 
                 buttonTestForDevice.Select();
@@ -1497,6 +1502,28 @@ namespace DeviceTestApplication
             foreach (var testItem in Globals.TestList.TestItems)
                 testItem.Status = !testItem.Enabled ? EnumTestStatus.Disabled : EnumTestStatus.NotStarted;
             testItemBindingSource.DataSource = Globals.TestList.TestItems;
+        }
+
+        private void clearCacheFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var dr = MessageBoxEx.Show("Are you sure?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (dr != DialogResult.OK)
+                return;
+
+            if(Directory.Exists(Globals.CacheFolder))
+            {
+                var files = Directory.GetFiles(Globals.CacheFolder);
+                foreach(var file in files)
+                {
+                    try
+                    {
+                        File.Delete(file);
+                    } catch
+                    {
+                    }
+                }
+            }
+
         }
 
     }
