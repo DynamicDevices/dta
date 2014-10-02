@@ -224,9 +224,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DynamicDevices.Testing.DAO\DynamicDevices.Testing.DAO.csproj">
       <Project>{E5DCC2DC-6A52-4121-BF5F-BCDF11DF2976}</Project>
       <Name>DynamicDevices.Testing.DAO</Name>

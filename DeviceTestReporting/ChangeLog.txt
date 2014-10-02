@@ -10,3 +10,4 @@ TODO:
 0.1			07/01/2012	AJL			Initial cut
 0.2			07/01/2012	AJL			Adding in menu for refresh and exit
 0.3			09/01/2012	AJL			Added dev database support
+0.4			02/10/2014	AJL			Added filtering by tester

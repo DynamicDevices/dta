@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using DeviceTestApplication;
+using Be.Timvw.Framework.ComponentModel;
 using log4net;
 using NHibernate;
 using NHibernate.Criterion;
@@ -17,16 +17,24 @@ namespace DeviceTestReporting
         protected static ISessionFactory Nhibernatefactory;
         protected ISession Session;
 
-        protected IList<Device> CollDevices;
-        protected IList<TestListResult> CollTestListResults;
-        protected IList<TestItemResult> CollTestItemResults;
+        protected SortableBindingList<Device> CollDevices;
+        protected SortableBindingList<TestListResult> CollTestListResults;
+        protected SortableBindingList<TestItemResult> CollTestItemResults;
+        protected SortableBindingList<Employee> CollEmployees;
 
-        public IList<Device> Devices { get { return CollDevices;  } }
+        public SortableBindingList<Device> Devices { get { return CollDevices; } }
 
+        private readonly frmLoading _frmLoading;
+            
         public FrmMain()
         {
             InitializeComponent();
-        
+
+            _frmLoading = new frmLoading();
+            _frmLoading.Show();
+            _frmLoading.BringToFront();
+            
+            Application.DoEvents();
         }
 
         /// <summary>
@@ -97,14 +105,23 @@ namespace DeviceTestReporting
                 Cursor.Current = Cursors.WaitCursor;
 
                 ICriteria crit = Session.CreateCriteria(typeof (Device));
-                CollDevices = crit.List<Device>();
+                CollDevices = new SortableBindingList<Device>(crit.List<Device>());
                 dataGridViewDevice.DataSource = CollDevices;
+
+                foreach (DataGridViewColumn column in dataGridViewDevice.Columns)
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+
+                crit = Session.CreateCriteria(typeof (Employee));
+                CollEmployees = new SortableBindingList<Employee>(crit.List<Employee>());
+                comboBoxUsers.DataSource = CollEmployees;
 
                 Cursor.Current = c;
             } catch(Exception ex)
             {
                 Logger.Warn("Exception in loading: " + ex.Message);
             }
+
+            _frmLoading.Close();
         }
 
         private void DataGridViewDeviceSelectionChanged(object sender, EventArgs e)
@@ -125,7 +142,7 @@ namespace DeviceTestReporting
 
                     var crit = Session.CreateCriteria(typeof (TestListResult));
                     crit.Add(Restrictions.Eq("Device", d));
-                    CollTestListResults = crit.List<TestListResult>();
+                    CollTestListResults = new SortableBindingList<TestListResult>(crit.List<TestListResult>());
                     dataGridViewTestListResult.DataSource = CollTestListResults;
                     break;
                 }
@@ -150,7 +167,7 @@ namespace DeviceTestReporting
                 {
                     var crit = Session.CreateCriteria(typeof(TestItemResult));
                     crit.Add(Restrictions.Eq("TestListResult", tlr));
-                    CollTestItemResults = crit.List<TestItemResult>();
+                    CollTestItemResults = new SortableBindingList<TestItemResult>(crit.List<TestItemResult>());
                     dataGridViewTestItemResult.DataSource = CollTestItemResults;
                     break;
                 }
@@ -165,13 +182,13 @@ namespace DeviceTestReporting
             Cursor.Current = Cursors.WaitCursor;
 
             ICriteria crit = Session.CreateCriteria(typeof(Device));
-            CollDevices = crit.List<Device>();
+            CollDevices = new SortableBindingList<Device>(crit.List<Device>());
             dataGridViewDevice.DataSource = CollDevices;
 
             Cursor.Current = c;
         }
 
-        private static void ExitToolStripMenuItemExitClick(object sender, EventArgs e)
+        private void ExitToolStripMenuItemExitClick(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -181,5 +198,16 @@ namespace DeviceTestReporting
            FrmMainLoad(this, null);
         }
 
+        private void ComboBoxUsersSelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            var employee = CollEmployees[comboBoxUsers.SelectedIndex];
+            
+            var crit = Session.CreateCriteria(typeof(Device)).Add(Restrictions.Eq("LastTester", employee));
+
+            CollDevices = new SortableBindingList<Device>(crit.List<Device>());
+            dataGridViewDevice.DataSource = CollDevices;
+
+        }
     }
 }

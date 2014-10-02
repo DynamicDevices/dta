@@ -64,12 +64,14 @@
             this.lastTesterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastTestDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.frmMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItemRefresh = new System.Windows.Forms.ToolStripMenuItem();
             this.useDevDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBoxUsers = new System.Windows.Forms.ComboBox();
+            this.frmMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTestItemResult)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -78,8 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.testListResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -197,7 +199,6 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(FrmMain.ExitToolStripMenuItemExitClick);
             // 
             // testItemResultBindingSource
             // 
@@ -337,7 +338,7 @@
             this.producerSerialNumberDataGridViewTextBoxColumn.DataPropertyName = "ProducerSerialNumber";
             this.producerSerialNumberDataGridViewTextBoxColumn.HeaderText = "ProducerSerialNumber";
             this.producerSerialNumberDataGridViewTextBoxColumn.Name = "producerSerialNumberDataGridViewTextBoxColumn";
-            this.producerSerialNumberDataGridViewTextBoxColumn.Width = 130;
+            this.producerSerialNumberDataGridViewTextBoxColumn.Width = 138;
             // 
             // customerSerialNumberDataGridViewTextBoxColumn
             // 
@@ -391,10 +392,6 @@
             // 
             this.deviceBindingSource.DataSource = typeof(DynamicDevices.Testing.DAO.Device);
             // 
-            // frmMainBindingSource
-            // 
-            this.frmMainBindingSource.DataSource = typeof(DeviceTestReporting.FrmMain);
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -435,13 +432,37 @@
             this.exitToolStripMenuItemExit.Name = "exitToolStripMenuItemExit";
             this.exitToolStripMenuItemExit.Size = new System.Drawing.Size(167, 22);
             this.exitToolStripMenuItemExit.Text = "Exit";
-            this.exitToolStripMenuItemExit.Click += new System.EventHandler(FrmMain.ExitToolStripMenuItemExitClick);
+            this.exitToolStripMenuItemExit.Click += new System.EventHandler(this.ExitToolStripMenuItemExitClick);
+            // 
+            // comboBoxUsers
+            // 
+            this.comboBoxUsers.FormattingEnabled = true;
+            this.comboBoxUsers.Location = new System.Drawing.Point(863, 3);
+            this.comboBoxUsers.Name = "comboBoxUsers";
+            this.comboBoxUsers.Size = new System.Drawing.Size(236, 21);
+            this.comboBoxUsers.TabIndex = 2;
+            this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.ComboBoxUsersSelectedIndexChanged);
+            // 
+            // frmMainBindingSource
+            // 
+            this.frmMainBindingSource.DataSource = typeof(DeviceTestReporting.FrmMain);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(820, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tester";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 563);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBoxUsers);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -457,9 +478,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.testListResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deviceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.frmMainBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,6 +528,8 @@
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem useDevDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBoxUsers;
+        private System.Windows.Forms.Label label1;
 
     }
 }

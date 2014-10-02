@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Configuration;
-using System.IO;
-using System.Net;
-using DynamicDevices.Testing.DAO;
 
-namespace DeviceTestApplication
+namespace DeviceTestReporting
 {
     public class Globals
     {
