@@ -8,6 +8,14 @@ TODO:
 - need to make UI threaded
 
 0.1			07/01/2012	AJL			Initial cut
+
 0.2			07/01/2012	AJL			Adding in menu for refresh and exit
+
 0.3			09/01/2012	AJL			Added dev database support
+
 0.4			02/10/2014	AJL			Added filtering by tester
+
+0.5			08/10/2014	AJL			Added flush and try {} catch block to work around exception that seems to happen intermittently
+									with NHibernate database access (transient data in session needs flushing?)
+									
+									Also made data grids read only as there shouldn't be any transient data that needs flushing

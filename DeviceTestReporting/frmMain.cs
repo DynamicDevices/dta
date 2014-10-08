@@ -140,10 +140,18 @@ namespace DeviceTestReporting
                 {
                     dataGridViewTestItemResult.ClearSelection();
 
-                    var crit = Session.CreateCriteria(typeof (TestListResult));
-                    crit.Add(Restrictions.Eq("Device", d));
-                    CollTestListResults = new SortableBindingList<TestListResult>(crit.List<TestListResult>());
-                    dataGridViewTestListResult.DataSource = CollTestListResults;
+                    try
+                    {
+                        Session.Flush();
+
+                        var crit = Session.CreateCriteria(typeof (TestListResult));
+                        crit.Add(Restrictions.Eq("Device", d));
+                        CollTestListResults = new SortableBindingList<TestListResult>(crit.List<TestListResult>());
+                        dataGridViewTestListResult.DataSource = CollTestListResults;
+                    } catch
+                    {
+                    }
+
                     break;
                 }
             }

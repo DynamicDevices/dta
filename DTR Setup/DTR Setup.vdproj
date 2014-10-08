@@ -70,13 +70,13 @@
         "Entry"
         {
         "MsmKey" = "8:_B63396425C0EDD629334F2B4C71B64B3"
-        "OwnerKey" = "8:_4D0108D3019AC5A9E3363B7F5A5E6937"
+        "OwnerKey" = "8:_AC5C4F0A437844588BBA76DA976FF2C2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_B63396425C0EDD629334F2B4C71B64B3"
-        "OwnerKey" = "8:_AC5C4F0A437844588BBA76DA976FF2C2"
+        "OwnerKey" = "8:_4D0108D3019AC5A9E3363B7F5A5E6937"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -94,31 +94,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F02F4F21504C2CAFFB8DA4078906C0C1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5497CE5F847BD8ECA4921D699B39031F"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_55EDFF37530937685DAC80927E849500"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4D0108D3019AC5A9E3363B7F5A5E6937"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_84FE5366CE2B9B62FD79D58030EFC30C"
+        "OwnerKey" = "8:_B63396425C0EDD629334F2B4C71B64B3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -130,7 +106,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B63396425C0EDD629334F2B4C71B64B3"
+        "OwnerKey" = "8:_84FE5366CE2B9B62FD79D58030EFC30C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4D0108D3019AC5A9E3363B7F5A5E6937"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_55EDFF37530937685DAC80927E849500"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_5497CE5F847BD8ECA4921D699B39031F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F02F4F21504C2CAFFB8DA4078906C0C1"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -245,11 +245,6 @@
             "AssemblyAsmDisplayName" = "8:DynamicDevices.Testing.DAO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_37A3FC98D70FD70888466AAED5083815"
-                    {
-                    "Name" = "8:DynamicDevices.Testing.DAO.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:DynamicDevices.Testing.DAO.dll"
             "TargetName" = "8:"
@@ -276,11 +271,6 @@
             "AssemblyAsmDisplayName" = "8:NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4D0108D3019AC5A9E3363B7F5A5E6937"
-                    {
-                    "Name" = "8:NHibernate.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:NHibernate.dll"
             "TargetName" = "8:"
@@ -307,11 +297,6 @@
             "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_5497CE5F847BD8ECA4921D699B39031F"
-                    {
-                    "Name" = "8:log4net.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:log4net.dll"
             "TargetName" = "8:"
@@ -338,11 +323,6 @@
             "AssemblyAsmDisplayName" = "8:NHibernate.ByteCode.LinFu, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_55EDFF37530937685DAC80927E849500"
-                    {
-                    "Name" = "8:NHibernate.ByteCode.LinFu.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:NHibernate.ByteCode.LinFu.dll"
             "TargetName" = "8:"
@@ -369,11 +349,6 @@
             "AssemblyAsmDisplayName" = "8:LinFu.DynamicProxy, Version=1.0.4.18998, Culture=neutral, PublicKeyToken=62a6874124340d6e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_84FE5366CE2B9B62FD79D58030EFC30C"
-                    {
-                    "Name" = "8:LinFu.DynamicProxy.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:LinFu.DynamicProxy.dll"
             "TargetName" = "8:"
@@ -400,11 +375,6 @@
             "AssemblyAsmDisplayName" = "8:Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B63396425C0EDD629334F2B4C71B64B3"
-                    {
-                    "Name" = "8:Iesi.Collections.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Iesi.Collections.dll"
             "TargetName" = "8:"
@@ -431,11 +401,6 @@
             "AssemblyAsmDisplayName" = "8:MySql.Data, Version=6.4.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F02F4F21504C2CAFFB8DA4078906C0C1"
-                    {
-                    "Name" = "8:MySql.Data.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:MySql.Data.dll"
             "TargetName" = "8:"
@@ -522,15 +487,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Device Test Reporting"
-        "ProductCode" = "8:{7984A874-B4BF-4AFF-9A5B-6FACCC3326EA}"
-        "PackageCode" = "8:{70A0A2BC-D8AD-4301-B1B6-0F8D2E4F3459}"
+        "ProductCode" = "8:{C34F0168-C12D-4FA9-90D6-D0813826B0B6}"
+        "PackageCode" = "8:{460E104E-8105-4ABD-B954-F865CB27DD9D}"
         "UpgradeCode" = "8:{A5AD06C9-C3EC-42A0-9BFC-637F26D7EAF5}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:0.4.0"
+        "ProductVersion" = "8:0.5.0"
         "Manufacturer" = "8:Dynamic Devices Ltd"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -1072,7 +1037,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_AC5C4F0A437844588BBA76DA976FF2C2"
             {
-            "SourcePath" = "8:..\\DeviceTestReporting\\obj\\Debug\\DeviceTestReporting.exe"
+            "SourcePath" = "8:..\\DeviceTestReporting\\obj\\Release\\DeviceTestReporting.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0F58A4D680424489AECCFAE6E9303CFF"

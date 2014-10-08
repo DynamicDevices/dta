@@ -70,8 +70,8 @@
             this.useDevDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBoxUsers = new System.Windows.Forms.ComboBox();
-            this.frmMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.frmMainBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTestItemResult)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -107,6 +107,7 @@
             // dataGridViewTestItemResult
             // 
             this.dataGridViewTestItemResult.AutoGenerateColumns = false;
+            this.dataGridViewTestItemResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTestItemResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTestItemResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -121,6 +122,7 @@
             this.dataGridViewTestItemResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewTestItemResult.Location = new System.Drawing.Point(3, 369);
             this.dataGridViewTestItemResult.Name = "dataGridViewTestItemResult";
+            this.dataGridViewTestItemResult.ReadOnly = true;
             this.dataGridViewTestItemResult.Size = new System.Drawing.Size(1105, 167);
             this.dataGridViewTestItemResult.TabIndex = 18;
             // 
@@ -130,6 +132,7 @@
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn.Width = 43;
             // 
             // testItemDataGridViewTextBoxColumn
@@ -138,6 +141,7 @@
             this.testItemDataGridViewTextBoxColumn.DataPropertyName = "TestItem";
             this.testItemDataGridViewTextBoxColumn.HeaderText = "TestItem";
             this.testItemDataGridViewTextBoxColumn.Name = "testItemDataGridViewTextBoxColumn";
+            this.testItemDataGridViewTextBoxColumn.ReadOnly = true;
             this.testItemDataGridViewTextBoxColumn.Width = 73;
             // 
             // testListResultDataGridViewTextBoxColumn
@@ -146,7 +150,9 @@
             this.testListResultDataGridViewTextBoxColumn.DataPropertyName = "TestListResult";
             this.testListResultDataGridViewTextBoxColumn.HeaderText = "TestListResult";
             this.testListResultDataGridViewTextBoxColumn.Name = "testListResultDataGridViewTextBoxColumn";
+            this.testListResultDataGridViewTextBoxColumn.ReadOnly = true;
             this.testListResultDataGridViewTextBoxColumn.Visible = false;
+            this.testListResultDataGridViewTextBoxColumn.Width = 99;
             // 
             // deviceDataGridViewTextBoxColumn
             // 
@@ -154,7 +160,9 @@
             this.deviceDataGridViewTextBoxColumn.DataPropertyName = "Device";
             this.deviceDataGridViewTextBoxColumn.HeaderText = "Device";
             this.deviceDataGridViewTextBoxColumn.Name = "deviceDataGridViewTextBoxColumn";
+            this.deviceDataGridViewTextBoxColumn.ReadOnly = true;
             this.deviceDataGridViewTextBoxColumn.Visible = false;
+            this.deviceDataGridViewTextBoxColumn.Width = 66;
             // 
             // resultDataGridViewCheckBoxColumn
             // 
@@ -162,6 +170,7 @@
             this.resultDataGridViewCheckBoxColumn.DataPropertyName = "Result";
             this.resultDataGridViewCheckBoxColumn.HeaderText = "Result";
             this.resultDataGridViewCheckBoxColumn.Name = "resultDataGridViewCheckBoxColumn";
+            this.resultDataGridViewCheckBoxColumn.ReadOnly = true;
             this.resultDataGridViewCheckBoxColumn.Width = 43;
             // 
             // notesDataGridViewTextBoxColumn
@@ -170,6 +179,7 @@
             this.notesDataGridViewTextBoxColumn.DataPropertyName = "Notes";
             this.notesDataGridViewTextBoxColumn.HeaderText = "Notes";
             this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
+            this.notesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // creationDateDataGridViewTextBoxColumn
             // 
@@ -177,6 +187,7 @@
             this.creationDateDataGridViewTextBoxColumn.DataPropertyName = "CreationDate";
             this.creationDateDataGridViewTextBoxColumn.HeaderText = "CreationDate";
             this.creationDateDataGridViewTextBoxColumn.Name = "creationDateDataGridViewTextBoxColumn";
+            this.creationDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.creationDateDataGridViewTextBoxColumn.Width = 94;
             // 
             // contextMenuStrip1
@@ -207,6 +218,7 @@
             // dataGridViewTestListResult
             // 
             this.dataGridViewTestListResult.AutoGenerateColumns = false;
+            this.dataGridViewTestListResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewTestListResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTestListResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn1,
@@ -223,6 +235,7 @@
             this.dataGridViewTestListResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewTestListResult.Location = new System.Drawing.Point(3, 186);
             this.dataGridViewTestListResult.Name = "dataGridViewTestListResult";
+            this.dataGridViewTestListResult.ReadOnly = true;
             this.dataGridViewTestListResult.Size = new System.Drawing.Size(1105, 166);
             this.dataGridViewTestListResult.TabIndex = 17;
             this.dataGridViewTestListResult.SelectionChanged += new System.EventHandler(this.DataGridViewTestListResultSelectionChanged);
@@ -233,6 +246,7 @@
             this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn1.Width = 43;
             // 
             // employeeDataGridViewTextBoxColumn
@@ -241,6 +255,7 @@
             this.employeeDataGridViewTextBoxColumn.DataPropertyName = "Employee";
             this.employeeDataGridViewTextBoxColumn.HeaderText = "Employee";
             this.employeeDataGridViewTextBoxColumn.Name = "employeeDataGridViewTextBoxColumn";
+            this.employeeDataGridViewTextBoxColumn.ReadOnly = true;
             this.employeeDataGridViewTextBoxColumn.Width = 78;
             // 
             // testLocationDataGridViewTextBoxColumn
@@ -249,6 +264,7 @@
             this.testLocationDataGridViewTextBoxColumn.DataPropertyName = "TestLocation";
             this.testLocationDataGridViewTextBoxColumn.HeaderText = "TestLocation";
             this.testLocationDataGridViewTextBoxColumn.Name = "testLocationDataGridViewTextBoxColumn";
+            this.testLocationDataGridViewTextBoxColumn.ReadOnly = true;
             this.testLocationDataGridViewTextBoxColumn.Width = 94;
             // 
             // testListDataGridViewTextBoxColumn
@@ -257,6 +273,7 @@
             this.testListDataGridViewTextBoxColumn.DataPropertyName = "TestList";
             this.testListDataGridViewTextBoxColumn.HeaderText = "TestList";
             this.testListDataGridViewTextBoxColumn.Name = "testListDataGridViewTextBoxColumn";
+            this.testListDataGridViewTextBoxColumn.ReadOnly = true;
             this.testListDataGridViewTextBoxColumn.Width = 69;
             // 
             // deviceDataGridViewTextBoxColumn1
@@ -265,7 +282,9 @@
             this.deviceDataGridViewTextBoxColumn1.DataPropertyName = "Device";
             this.deviceDataGridViewTextBoxColumn1.HeaderText = "Device";
             this.deviceDataGridViewTextBoxColumn1.Name = "deviceDataGridViewTextBoxColumn1";
+            this.deviceDataGridViewTextBoxColumn1.ReadOnly = true;
             this.deviceDataGridViewTextBoxColumn1.Visible = false;
+            this.deviceDataGridViewTextBoxColumn1.Width = 66;
             // 
             // resultDataGridViewCheckBoxColumn1
             // 
@@ -273,6 +292,7 @@
             this.resultDataGridViewCheckBoxColumn1.DataPropertyName = "Result";
             this.resultDataGridViewCheckBoxColumn1.HeaderText = "Result";
             this.resultDataGridViewCheckBoxColumn1.Name = "resultDataGridViewCheckBoxColumn1";
+            this.resultDataGridViewCheckBoxColumn1.ReadOnly = true;
             this.resultDataGridViewCheckBoxColumn1.Width = 43;
             // 
             // resultURLDataGridViewTextBoxColumn
@@ -281,6 +301,7 @@
             this.resultURLDataGridViewTextBoxColumn.DataPropertyName = "ResultURL";
             this.resultURLDataGridViewTextBoxColumn.HeaderText = "ResultURL";
             this.resultURLDataGridViewTextBoxColumn.Name = "resultURLDataGridViewTextBoxColumn";
+            this.resultURLDataGridViewTextBoxColumn.ReadOnly = true;
             this.resultURLDataGridViewTextBoxColumn.Width = 84;
             // 
             // notesDataGridViewTextBoxColumn1
@@ -289,6 +310,7 @@
             this.notesDataGridViewTextBoxColumn1.DataPropertyName = "Notes";
             this.notesDataGridViewTextBoxColumn1.HeaderText = "Notes";
             this.notesDataGridViewTextBoxColumn1.Name = "notesDataGridViewTextBoxColumn1";
+            this.notesDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // creationDateDataGridViewTextBoxColumn1
             // 
@@ -296,6 +318,7 @@
             this.creationDateDataGridViewTextBoxColumn1.DataPropertyName = "CreationDate";
             this.creationDateDataGridViewTextBoxColumn1.HeaderText = "CreationDate";
             this.creationDateDataGridViewTextBoxColumn1.Name = "creationDateDataGridViewTextBoxColumn1";
+            this.creationDateDataGridViewTextBoxColumn1.ReadOnly = true;
             this.creationDateDataGridViewTextBoxColumn1.Width = 94;
             // 
             // testListResultBindingSource
@@ -305,6 +328,7 @@
             // dataGridViewDevice
             // 
             this.dataGridViewDevice.AutoGenerateColumns = false;
+            this.dataGridViewDevice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDevice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDevice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn2,
@@ -320,6 +344,7 @@
             this.dataGridViewDevice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewDevice.Location = new System.Drawing.Point(3, 3);
             this.dataGridViewDevice.Name = "dataGridViewDevice";
+            this.dataGridViewDevice.ReadOnly = true;
             this.dataGridViewDevice.Size = new System.Drawing.Size(1105, 166);
             this.dataGridViewDevice.TabIndex = 13;
             this.dataGridViewDevice.SelectionChanged += new System.EventHandler(this.DataGridViewDeviceSelectionChanged);
@@ -330,6 +355,7 @@
             this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            this.iDDataGridViewTextBoxColumn2.ReadOnly = true;
             this.iDDataGridViewTextBoxColumn2.Width = 43;
             // 
             // producerSerialNumberDataGridViewTextBoxColumn
@@ -338,6 +364,7 @@
             this.producerSerialNumberDataGridViewTextBoxColumn.DataPropertyName = "ProducerSerialNumber";
             this.producerSerialNumberDataGridViewTextBoxColumn.HeaderText = "ProducerSerialNumber";
             this.producerSerialNumberDataGridViewTextBoxColumn.Name = "producerSerialNumberDataGridViewTextBoxColumn";
+            this.producerSerialNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.producerSerialNumberDataGridViewTextBoxColumn.Width = 138;
             // 
             // customerSerialNumberDataGridViewTextBoxColumn
@@ -346,6 +373,7 @@
             this.customerSerialNumberDataGridViewTextBoxColumn.DataPropertyName = "CustomerSerialNumber";
             this.customerSerialNumberDataGridViewTextBoxColumn.HeaderText = "CustomerSerialNumber";
             this.customerSerialNumberDataGridViewTextBoxColumn.Name = "customerSerialNumberDataGridViewTextBoxColumn";
+            this.customerSerialNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.customerSerialNumberDataGridViewTextBoxColumn.Width = 139;
             // 
             // deviceClassDataGridViewTextBoxColumn
@@ -354,6 +382,7 @@
             this.deviceClassDataGridViewTextBoxColumn.DataPropertyName = "DeviceClass";
             this.deviceClassDataGridViewTextBoxColumn.HeaderText = "DeviceClass";
             this.deviceClassDataGridViewTextBoxColumn.Name = "deviceClassDataGridViewTextBoxColumn";
+            this.deviceClassDataGridViewTextBoxColumn.ReadOnly = true;
             this.deviceClassDataGridViewTextBoxColumn.Width = 91;
             // 
             // creationDateDataGridViewTextBoxColumn2
@@ -362,6 +391,7 @@
             this.creationDateDataGridViewTextBoxColumn2.DataPropertyName = "CreationDate";
             this.creationDateDataGridViewTextBoxColumn2.HeaderText = "CreationDate";
             this.creationDateDataGridViewTextBoxColumn2.Name = "creationDateDataGridViewTextBoxColumn2";
+            this.creationDateDataGridViewTextBoxColumn2.ReadOnly = true;
             this.creationDateDataGridViewTextBoxColumn2.Width = 94;
             // 
             // creatorDataGridViewTextBoxColumn
@@ -370,6 +400,7 @@
             this.creatorDataGridViewTextBoxColumn.DataPropertyName = "Creator";
             this.creatorDataGridViewTextBoxColumn.HeaderText = "Creator";
             this.creatorDataGridViewTextBoxColumn.Name = "creatorDataGridViewTextBoxColumn";
+            this.creatorDataGridViewTextBoxColumn.ReadOnly = true;
             this.creatorDataGridViewTextBoxColumn.Width = 66;
             // 
             // lastTesterDataGridViewTextBoxColumn
@@ -378,6 +409,7 @@
             this.lastTesterDataGridViewTextBoxColumn.DataPropertyName = "LastTester";
             this.lastTesterDataGridViewTextBoxColumn.HeaderText = "LastTester";
             this.lastTesterDataGridViewTextBoxColumn.Name = "lastTesterDataGridViewTextBoxColumn";
+            this.lastTesterDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastTesterDataGridViewTextBoxColumn.Width = 82;
             // 
             // lastTestDateDataGridViewTextBoxColumn
@@ -386,6 +418,7 @@
             this.lastTestDateDataGridViewTextBoxColumn.DataPropertyName = "LastTestDate";
             this.lastTestDateDataGridViewTextBoxColumn.HeaderText = "LastTestDate";
             this.lastTestDateDataGridViewTextBoxColumn.Name = "lastTestDateDataGridViewTextBoxColumn";
+            this.lastTestDateDataGridViewTextBoxColumn.ReadOnly = true;
             this.lastTestDateDataGridViewTextBoxColumn.Width = 96;
             // 
             // deviceBindingSource
@@ -443,10 +476,6 @@
             this.comboBoxUsers.TabIndex = 2;
             this.comboBoxUsers.SelectedIndexChanged += new System.EventHandler(this.ComboBoxUsersSelectedIndexChanged);
             // 
-            // frmMainBindingSource
-            // 
-            this.frmMainBindingSource.DataSource = typeof(DeviceTestReporting.FrmMain);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -455,6 +484,10 @@
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Tester";
+            // 
+            // frmMainBindingSource
+            // 
+            this.frmMainBindingSource.DataSource = typeof(DeviceTestReporting.FrmMain);
             // 
             // FrmMain
             // 
